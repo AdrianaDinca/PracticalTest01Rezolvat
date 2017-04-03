@@ -14,12 +14,14 @@ public class PracticalTest01MainActivity extends AppCompatActivity {
     private EditText rightEditText = null;
     private Button leftButton = null;
     private Button rightButton = null;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practical_test01_main);
 
-        navigateToSecondayActivity = (Button)findViewById(R.id.navigate_to_secondary_activity_button);
+        //navigateToSecondayActivity = (Button)findViewById(R.id.navigate_to_secondary_activity_button);
         leftEditText = (EditText)findViewById(R.id.left_edit_text);
         rightEditText = (EditText)findViewById(R.id.right_edit_text);
         leftEditText.setText(String.valueOf(0));
