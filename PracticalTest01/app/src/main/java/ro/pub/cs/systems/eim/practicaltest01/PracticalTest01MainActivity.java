@@ -1,6 +1,7 @@
 package ro.pub.cs.systems.eim.practicaltest01;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -53,6 +54,15 @@ public class PracticalTest01MainActivity extends AppCompatActivity {
         leftButton.setOnClickListener(buttonClickListener);
         rightButton.setOnClickListener(buttonClickListener);
 
+        if (savedInstanceState != null) {
+            if (savedInstanceState.containsKey("leftCount")) {
+                leftEditText.setText(savedInstanceState.getString("leftCount"));
+            }
+            if (savedInstanceState.containsKey("rightCount")) {
+                rightEditText.setText(savedInstanceState.getString("rightCount"));
+            }
+        }
+
        /* Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -86,5 +96,26 @@ public class PracticalTest01MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putString("leftCount", leftEditText.getText().toString());
+        outState.putString("rightCount", rightEditText.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        if (savedInstanceState.containsKey("leftCount")) {
+            leftEditText.setText(savedInstanceState.getString("leftCount"));
+        } else {
+            leftEditText.setText(String.valueOf(0));
+        }
+
+        if (savedInstanceState.containsKey("rightCount")) {
+            rightEditText.setText(savedInstanceState.getString("rightCount"));
+        } else {
+            rightEditText.setText(String.valueOf(0));
+        }
     }
 }
