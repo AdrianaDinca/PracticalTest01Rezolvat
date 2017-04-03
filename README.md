@@ -1,2 +1,4 @@
 # PracticalTest01Rezolvat
-colocviu rezolvat eim
+Nume: Dinca Adriana
+Grupa: 342C1
+
