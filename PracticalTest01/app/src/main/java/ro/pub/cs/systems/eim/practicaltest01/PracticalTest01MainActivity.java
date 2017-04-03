@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -14,7 +15,26 @@ public class PracticalTest01MainActivity extends AppCompatActivity {
     private EditText rightEditText = null;
     private Button leftButton = null;
     private Button rightButton = null;
+    private ButtonClickListener buttonClickListener = new ButtonClickListener();
 
+    private class ButtonClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.left_button:
+                    leftEditText.setText(
+                            String.valueOf(Integer.
+                                    parseInt(leftEditText.getText().toString()) + 1));
+                    break;
+                case R.id.right_button:
+                    rightEditText.setText(
+                            String.valueOf(Integer.
+                                    parseInt(rightEditText.getText().toString()) + 1));
+                    break;
+
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +45,13 @@ public class PracticalTest01MainActivity extends AppCompatActivity {
         leftEditText = (EditText)findViewById(R.id.left_edit_text);
         rightEditText = (EditText)findViewById(R.id.right_edit_text);
         leftEditText.setText(String.valueOf(0));
-        rightEditText.setTag(String.valueOf(0));
+        rightEditText.setText(String.valueOf(0));
 
         leftButton = (Button)findViewById(R.id.left_button);
         rightButton = (Button)findViewById(R.id.right_button);
+
+        leftButton.setOnClickListener(buttonClickListener);
+        rightButton.setOnClickListener(buttonClickListener);
 
        /* Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
