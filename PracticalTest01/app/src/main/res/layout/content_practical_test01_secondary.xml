@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    tools:context="ro.pub.cs.systems.eim.practicaltest01.PracticalTest01SecondaryActivity"
+    tools:layout_editor_absoluteY="0dp"
+    tools:layout_editor_absoluteX="10dp">
+
+    <EditText
+        android:id="@+id/number_of_clicks_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:saveEnabled="false"
+        android:enabled="false"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_alignParentLeft="true"
+        android:gravity="center" />
+    <Button
+        android:id="@+id/ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/number_of_clicks_text_view"
+        android:layout_below="@id/number_of_clicks_text_view"
+        android:text="      OK      " />
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/number_of_clicks_text_view"
+        android:layout_below="@id/number_of_clicks_text_view"
+        android:text="      CANCEL     "/>
+
+</RelativeLayout>
+
